@@ -3,12 +3,12 @@
  * Plugin Name: Futurio Extra
  * Plugin URI: https://futuriowp.com/
  * Description: Extra addon for Futurio Theme
- * Version: 2.0.11
+ * Version: 2.0.13
  * Author: FuturioWP
  * Author URI: https://futuriowp.com/
  * License: GPL-2.0+
  * WC requires at least: 3.3.0
- * WC tested up to: 9.3
+ * WC tested up to: 9.4
  * Elementor tested up to: 3.24.0
  */
 // Exit if accessed directly.
