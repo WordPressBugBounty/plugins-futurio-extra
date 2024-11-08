@@ -250,7 +250,7 @@ class Futurio_Advanced_Text_Block extends Widget_Base {
 
         $settings = $this->get_settings_for_display();
         $content = $settings['content_description'];
-        $block = $settings['header_size'];
+        $block = Utils::validate_html_tag( $settings['header_size']);
 
         $animation_effects = $settings["animation_effects"];
         $animation_delay = '';

@@ -3,8 +3,8 @@ Contributors: FuturioWP
 Author URI: https://futuriowp.com/about/
 Plugin URL: https://futuriowp.com/
 Requires at Least: 4.4
-Tested Up To: 6.6
-Stable tag: 2.0.13
+Tested Up To: 6.7
+Stable tag: 2.0.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: elementor, shortcodes, demo, page builder, woocommerce, widgets, templates
@@ -13,8 +13,8 @@ Futurio Extra add extra features to Futurio theme like widgets, WooCommerce opti
 
 == Description ==
 
-Futurio Extra add extra features and options to [Futurio](https://futuriowp.com/) theme.
-This plugin require the free WP theme - [Futurio](https://wordpress.org/themes/futurio/) - to be installed.
+Futurio Extra add extra features and options to [Futurio](https://futuriowp.com/) and [Futurio Storefront](https://wordpress.org/themes/futurio-storefront/) theme.
+This plugin require the free WP theme - [Futurio](https://wordpress.org/themes/futurio/) or [Futurio Storefront](https://wordpress.org/themes/futurio-storefront/) - to be installed.
 
 Futurio Extra brings new widgets to be used in Elementor and allows you to import beautiful page templates for Elementor page builder. It also comes with 100% WooCommerce support and custom options. With the one click demo import feature you can import all our 10+ demo sites.
 
@@ -55,9 +55,19 @@ Extend the WooCommerce with new options and features. Import full WooCommerce de
 
 = I installed the plugin but it does not work =
 
-This plugin will only work with the [Futurio](https://futuriowp.com/) theme.
+This plugin will only work with the [Futurio](https://futuriowp.com/) or [Futurio Storefront](https://wordpress.org/themes/futurio-storefront/) theme.
 
 == Changelog ==
+
+= 2.0.15 =
+* Security update
+
+= 2.0.14 =
+* Tested with Elementor 3.25
+* Tested with WP 6.7
+* Tested with WooCommerce 9.4
+* Security update
+* Updated demo importer
 
 = 2.0.13 =
 * Code fixes

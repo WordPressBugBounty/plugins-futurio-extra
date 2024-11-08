@@ -1783,10 +1783,59 @@ if (!class_exists('FuturioWP_Demos')) {
         }
 		
 		public function ajax_activate_theme() {
-            if (!current_user_can('manage_options') || !wp_verify_nonce(sanitize_text_field( wp_unslash( $_POST['futurio_import_demo_data_nonce'])), 'futurio_import_demo_data_nonce')) {
-                die('This action was stopped for security purposes.');
-            }
-            $this->tbfe_plugin_fire();
+            if ( !current_user_can( 'manage_options' ) || !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ 'futurio_import_demo_data_nonce' ] ) ), 'futurio_import_demo_data_nonce' ) ) {
+					die( 'This action was stopped for security purposes.' );
+				}
+				$result = '';
+				
+				// Get the selected demo
+				if ( isset( $_POST[ 'futurio_import_demo' ] ) ) {
+					$demo_type = sanitize_text_field( wp_unslash( $_POST[ 'futurio_import_demo' ] ) );
+				}
+
+				// Get demos data
+				$demo = FuturioWP_Demos::get_demos_data()[ $demo_type ];
+
+				// Settings file
+				$theme_settings = isset( $demo[ 'theme_settings' ] ) ? $demo[ 'theme_settings' ] : '';
+				$required_theme	 = isset( $demo[ 'required_theme' ] ) ? $demo[ 'required_theme' ] : '';
+				$required_theme = str_replace(' ', '-', strtolower($required_theme));
+
+				require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+				include_once ABSPATH . 'wp-admin/includes/theme.php';
+
+				$api = themes_api(
+					'theme_information', array(
+						'slug'	 => $required_theme,
+						'fields' => array( 'sections' => false ),
+					)
+				);
+
+				if ( is_wp_error( $api ) ) {
+					$status[ 'errorMessage' ] = $api->get_error_message();
+					wp_send_json_error( $status );
+				}
+
+				$skin		 = new WP_Ajax_Upgrader_Skin();
+				$upgrader	 = new Theme_Upgrader( $skin );
+				$result		 = $upgrader->install( $api->download_link );
+
+
+				// Include settings importer
+				include FE_PATH . 'classes/importers/class-settings-importer.php';
+
+				switch_theme( $required_theme );
+
+				// Import settings.
+				$settings_importer	 = new FWP_Settings_Importer();
+				$result				 = $settings_importer->process_import_file( $theme_settings );
+
+				if ( is_wp_error( $result ) ) {
+					echo json_encode( $result->errors );
+				} else {
+					echo 'successful import';
+				}
+				die();
         }
 		
 		private function tbfe_plugin_fire() {
