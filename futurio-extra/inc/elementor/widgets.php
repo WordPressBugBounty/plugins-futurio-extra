@@ -75,6 +75,7 @@ final class Futurio_Elementor_Extension {
 		wp_register_script(
 		'jquery-typed', FUTURIO_EXTRA_PLUGIN_URL . 'inc/elementor/widgets/js/typed.min.js', [
 			'jquery',
+			'waypoints',
 		], '1.1.4', true
 		);
 
@@ -90,6 +91,11 @@ final class Futurio_Elementor_Extension {
 			'jquery'
 		], FUTURIO_EXTRA_CURRENT_VERSION, true
 		);
+		wp_register_script(
+                'waypoints', FUTURIO_EXTRA_PLUGIN_URL . 'inc/elementor/widgets/js/waypoints.min.js', [
+				'jquery',
+                ], FUTURIO_EXTRA_CURRENT_VERSION, true
+        );
 	}
 	
 	public function editor_scripts() {

@@ -25,7 +25,9 @@ class Futurio_Extra_Widget_Writing_Effect_Headline extends Widget_Base {
     public function get_categories() {
         return ['basic'];
     }
-	
+	public function get_script_depends() {
+        return [ 'jquery-typed', 'futurio-extra-frontend', 'waypoints'  ];
+    }
 
     protected function register_controls() {
 
@@ -247,8 +249,6 @@ class Futurio_Extra_Widget_Writing_Effect_Headline extends Widget_Base {
                 ]
         );
 
-        wp_enqueue_script('jquery-typed');
-        wp_enqueue_script('futurio-extra-frontend');
         ?>
         <<?php Utils::print_validated_html_tag( $tag ); ?> <?php echo $this->get_render_attribute_string('headline'); ?>>
         <?php if (!empty($settings['before_text'])) : ?>
