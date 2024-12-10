@@ -3,7 +3,7 @@
  * Plugin Name: Futurio Extra
  * Plugin URI: https://futuriowp.com/
  * Description: Extra addon for Futurio Theme
- * Version: 2.0.16
+ * Version: 2.0.17
  * Author: FuturioWP
  * Author URI: https://futuriowp.com/
  * License: GPL-2.0+
@@ -51,7 +51,7 @@ if (wp_get_theme()->template == ('futurio') || wp_get_theme()->template == ('fut
 
 require_once( plugin_dir_path(__FILE__) . 'inc/notify.php' );
 
-add_action('plugins_loaded', 'futurio_extra_load_textdomain');
+add_action('init', 'futurio_extra_load_textdomain');
 
 function futurio_extra_load_textdomain() {
     load_plugin_textdomain('futurio-extra', false, basename(dirname(__FILE__)) . '/languages/');
