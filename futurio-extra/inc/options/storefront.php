@@ -181,12 +181,16 @@ function futurio_extra_header_styling() {
 
 	return $icons;
 }
-
+if ( !futurio_extra_check_for_futurio_pro() ) {
+	$desc = __( 'Custom color customizations are available in <a href="https://futuriowp.com/futurio-pro/#pro-features" target="_blank" rel="noopener">Futurio PRO</a>', 'futurio-extra' );
+} else {
+	$desc = '';
+}
 Kirki::add_field( 'futurio_extra', array(
 	'type'				 => 'sortable',
 	'settings'			 => 'header_layout',
 	'label'				 => __( 'Header Layout', 'futurio-extra' ),
-	'description'		 => __( 'Custom color customizations are available in <a href="https://futuriowp.com/futurio-pro/#pro-features" target="_blank" rel="noopener">Futurio PRO</a>', 'futurio-extra' ),
+	'description'		 => $desc,
 	'section'			 => 'header_section',
 	'priority'			 => 9,
 	'default'			 => in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ? array( 'heading', 'search', 'woo_account', 'woo_cart' ) : array( 'heading', 'search' ),

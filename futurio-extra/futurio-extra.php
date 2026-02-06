@@ -3,7 +3,7 @@
  * Plugin Name: Futurio Extra
  * Plugin URI: https://futuriowp.com/
  * Description: Extra addon for Futurio Theme
- * Version: 2.0.18
+ * Version: 2.0.21
  * Author: FuturioWP
  * Author URI: https://futuriowp.com/
  * License: GPL-2.0+
@@ -70,6 +70,10 @@ function futurio_extra_customize_enqueue() {
 }
 
 add_action('customize_controls_print_footer_scripts', 'futurio_extra_customize_enqueue', 10);
+
+function futurio_extra_admin_scripts() {
+    wp_enqueue_script( 'futurio-extra-elmn', plugin_dir_url(__FILE__) . 'inc/elementor/widgets/js/preview.min.js', array(), FUTURIO_EXTRA_CURRENT_VERSION, true );
+}
 
 /**
  * Footer copyright function
@@ -375,6 +379,7 @@ function futurio_extra_check_for_elementor_pro() {
  */
 if (futurio_extra_check_for_elementor()) {
     include_once( plugin_dir_path(__FILE__) . 'inc/elementor/widgets.php' );
+	add_action( 'admin_enqueue_scripts', 'futurio_extra_admin_scripts' );
     if (!futurio_extra_check_for_elementor_pro()) {
         include_once( plugin_dir_path(__FILE__) . 'inc/elementor/shortcode.php' );
     }

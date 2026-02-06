@@ -1,14 +1,15 @@
 <?php
+
 /**
  * Custom widgets.
  *
  */
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
+if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! function_exists( 'futurio_extra_load_widgets' ) ) :
+if ( !function_exists( 'futurio_extra_load_widgets' ) ) :
 
 	/**
 	 * Load widgets.
@@ -22,11 +23,11 @@ if ( ! function_exists( 'futurio_extra_load_widgets' ) ) :
 
 		// Popular Post.
 		register_widget( 'Futurio_Extra_Popular_Posts' );
-    
-    // Social.
+
+		// Social.
 		register_widget( 'Futurio_Extra_Social_Widget' );
-    
-    // About.
+
+		// About.
 		register_widget( 'Futurio_Extra_About_Me_Widget' );
 	}
 

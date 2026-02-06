@@ -20,39 +20,39 @@ Kirki::add_section( 'top_bar_colors_section', array(
  * Top Menu Colors
  */
 Kirki::add_field( 'futurio_extra', array(
-  'type' => 'radio-buttonset',
-  'settings' => 'topmenu_typography_tab',
-  'section' => 'top_bar_colors_section',
-  'transport' => 'postMessage',
-  'default' => 'desktop',
-  'choices' => array(
-      'desktop' => '<i class="dashicons dashicons-desktop"></i>',
-      'tablet' => '<i class="dashicons dashicons-tablet"></i>',
-      'mobile' => '<i class="dashicons dashicons-smartphone"></i>',
-  ),
-));
-Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'topmenu_typography',
-	'label'		 => esc_attr__( 'Top bar font', 'futurio-extra' ),
+	'type'		 => 'radio-buttonset',
+	'settings'	 => 'topmenu_typography_tab',
 	'section'	 => 'top_bar_colors_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
-		'font-family'	 => '',
-		'font-size'		 => '12px',
-		'variant'		 => '400',
-		'letter-spacing' => '0px',
-		'text-transform' => 'none',
-    futurio_extra_col()	=> '',
+	'transport'	 => 'postMessage',
+	'default'	 => 'desktop',
+	'choices'	 => array(
+		'desktop'	 => '<i class="dashicons dashicons-desktop"></i>',
+		'tablet'	 => '<i class="dashicons dashicons-tablet"></i>',
+		'mobile'	 => '<i class="dashicons dashicons-smartphone"></i>',
 	),
-  'choices' => futurio_extra_g_fonts(),
-	'priority'	 => 10,
-	'output'	 => array(
+) );
+Kirki::add_field( 'futurio_extra', array(
+	'type'				 => 'typography',
+	'settings'			 => 'topmenu_typography',
+	'label'				 => esc_attr__( 'Top bar font', 'futurio-extra' ),
+	'section'			 => 'top_bar_colors_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
+		'font-family'		 => '',
+		'font-size'			 => '12px',
+		'variant'			 => '400',
+		'letter-spacing'	 => '0px',
+		'text-transform'	 => 'none',
+		futurio_extra_col()	 => '',
+	),
+	'choices'			 => futurio_extra_g_fonts(),
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
 			'element' => '.top-bar-section',
-		), 
+		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'topmenu_typography_tab',
 			'operator'	 => '==',
@@ -61,25 +61,25 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'topmenu_typography_tablet',
-	'label'		 => esc_attr__( 'Top bar font', 'futurio-extra' ),
-	'section'	 => 'top_bar_colors_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'topmenu_typography_tablet',
+	'label'				 => esc_attr__( 'Top bar font', 'futurio-extra' ),
+	'section'			 => 'top_bar_colors_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'font-size'		 => '',
 		'variant'		 => '',
 		'letter-spacing' => '',
 		'text-transform' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '.top-bar-section',
-      'media_query'	 => '@media (max-width: 991px)',
-		), 
+			'element'		 => '.top-bar-section',
+			'media_query'	 => '@media (max-width: 991px)',
+		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'topmenu_typography_tab',
 			'operator'	 => '==',
@@ -88,25 +88,25 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'topmenu_typography_mobile',
-	'label'		 => esc_attr__( 'Top bar font', 'futurio-extra' ),
-	'section'	 => 'top_bar_colors_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'topmenu_typography_mobile',
+	'label'				 => esc_attr__( 'Top bar font', 'futurio-extra' ),
+	'section'			 => 'top_bar_colors_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'font-size'		 => '',
 		'variant'		 => '',
 		'letter-spacing' => '',
 		'text-transform' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '.top-bar-section',
-      'media_query'	 => '@media (max-width: 767px)',
-		), 
+			'element'		 => '.top-bar-section',
+			'media_query'	 => '@media (max-width: 767px)',
+		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'topmenu_typography_tab',
 			'operator'	 => '==',
@@ -115,9 +115,9 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'        => 'custom',
-	'settings'    => 'top_bar_colors_section_end',
-	'label'       => '<hr/>',
-	'section'     => 'top_bar_colors_section',
-	'default'     => '',  
+	'type'		 => 'custom',
+	'settings'	 => 'top_bar_colors_section_end',
+	'label'		 => '<hr/>',
+	'section'	 => 'top_bar_colors_section',
+	'default'	 => '',
 ) );

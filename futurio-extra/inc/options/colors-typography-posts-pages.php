@@ -20,34 +20,34 @@ Kirki::add_section( 'post_page_colors_section', array(
  * Colors
  */
 Kirki::add_field( 'futurio_extra', array(
-  'type' => 'radio-buttonset',
-  'settings' => 'post_page_typography_tab',
-  'section' => 'post_page_colors_section',
-  'transport' => 'postMessage',
-  'default' => 'desktop',
-  'choices' => array(
-      'desktop' => '<i class="dashicons dashicons-desktop"></i>',
-      'tablet' => '<i class="dashicons dashicons-tablet"></i>',
-      'mobile' => '<i class="dashicons dashicons-smartphone"></i>',
-  ),
-));
-Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'post_page_titles_typography',
-	'label'		 => esc_attr__( 'Titles', 'futurio-extra' ),
+	'type'		 => 'radio-buttonset',
+	'settings'	 => 'post_page_typography_tab',
 	'section'	 => 'post_page_colors_section',
-	'transport'	 => 'auto',
-  'choices' => futurio_extra_g_fonts(),
-	'default'	 => array(
-		'font-family'	 => '',
-		'font-size'		 => '',
-		'variant'		 => '',
-		'line-height'	 => '',
-		'letter-spacing' => '',
-    futurio_extra_col()	=> '',
+	'transport'	 => 'postMessage',
+	'default'	 => 'desktop',
+	'choices'	 => array(
+		'desktop'	 => '<i class="dashicons dashicons-desktop"></i>',
+		'tablet'	 => '<i class="dashicons dashicons-tablet"></i>',
+		'mobile'	 => '<i class="dashicons dashicons-smartphone"></i>',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+) );
+Kirki::add_field( 'futurio_extra', array(
+	'type'				 => 'typography',
+	'settings'			 => 'post_page_titles_typography',
+	'label'				 => esc_attr__( 'Titles', 'futurio-extra' ),
+	'section'			 => 'post_page_colors_section',
+	'transport'			 => 'auto',
+	'choices'			 => futurio_extra_g_fonts(),
+	'default'			 => array(
+		'font-family'		 => '',
+		'font-size'			 => '',
+		'variant'			 => '',
+		'line-height'		 => '',
+		'letter-spacing'	 => '',
+		futurio_extra_col()	 => '',
+	),
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
 			'element' => '.full-head-img h1.single-title, .single-head h1.single-title',
 		),
@@ -56,7 +56,7 @@ Kirki::add_field( 'futurio_extra', array(
 			'element'	 => '.comments-meta a',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'post_page_typography_tab',
 			'operator'	 => '==',
@@ -65,27 +65,27 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'post_page_titles_typography_excerpt',
-	'label'		 => esc_attr__( 'Content', 'futurio-extra' ),
-	'section'	 => 'post_page_colors_section',
-  'choices' => futurio_extra_g_fonts(),
-	'transport'	 => 'auto',
-	'default'	 => array(
-		'font-family'	 => '',
-		'font-size'		 => '',
-		'variant'		 => '',
-		'line-height'	 => '',
-		'letter-spacing' => '', 
-    futurio_extra_col()	=> '',
+	'type'				 => 'typography',
+	'settings'			 => 'post_page_titles_typography_excerpt',
+	'label'				 => esc_attr__( 'Content', 'futurio-extra' ),
+	'section'			 => 'post_page_colors_section',
+	'choices'			 => futurio_extra_g_fonts(),
+	'transport'			 => 'auto',
+	'default'			 => array(
+		'font-family'		 => '',
+		'font-size'			 => '',
+		'variant'			 => '',
+		'line-height'		 => '',
+		'letter-spacing'	 => '',
+		futurio_extra_col()	 => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
 			'element' => '.single-entry-summary',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'post_page_typography_tab',
 			'operator'	 => '==',
@@ -94,25 +94,25 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'post_page_titles_typography_tablet',
-	'label'		 => esc_attr__( 'Titles', 'futurio-extra' ),
-	'section'	 => 'post_page_colors_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'post_page_titles_typography_tablet',
+	'label'				 => esc_attr__( 'Titles', 'futurio-extra' ),
+	'section'			 => 'post_page_colors_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'font-size'		 => '',
 		'variant'		 => '',
 		'line-height'	 => '',
 		'letter-spacing' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '.full-head-img h1.single-title, .single-head h1.single-title',
-      'media_query'	 => '@media (max-width: 991px)',
+			'element'		 => '.full-head-img h1.single-title, .single-head h1.single-title',
+			'media_query'	 => '@media (max-width: 991px)',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'post_page_typography_tab',
 			'operator'	 => '==',
@@ -121,24 +121,24 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'post_page_titles_typography_excerpt_tablet',
-	'label'		 => esc_attr__( 'Content', 'futurio-extra' ),
-	'section'	 => 'post_page_colors_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'post_page_titles_typography_excerpt_tablet',
+	'label'				 => esc_attr__( 'Content', 'futurio-extra' ),
+	'section'			 => 'post_page_colors_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'font-size'		 => '',
 		'line-height'	 => '',
-		'letter-spacing' => '', 
+		'letter-spacing' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '.single-entry-summary',
-      'media_query'	 => '@media (max-width: 991px)',
+			'element'		 => '.single-entry-summary',
+			'media_query'	 => '@media (max-width: 991px)',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'post_page_typography_tab',
 			'operator'	 => '==',
@@ -147,25 +147,25 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'post_page_titles_typography_mobile',
-	'label'		 => esc_attr__( 'Titles', 'futurio-extra' ),
-	'section'	 => 'post_page_colors_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'post_page_titles_typography_mobile',
+	'label'				 => esc_attr__( 'Titles', 'futurio-extra' ),
+	'section'			 => 'post_page_colors_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'font-size'		 => '',
 		'variant'		 => '',
 		'line-height'	 => '',
 		'letter-spacing' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '.full-head-img h1.single-title, .single-head h1.single-title',
-      'media_query'	 => '@media (max-width: 767px)',
+			'element'		 => '.full-head-img h1.single-title, .single-head h1.single-title',
+			'media_query'	 => '@media (max-width: 767px)',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'post_page_typography_tab',
 			'operator'	 => '==',
@@ -174,24 +174,24 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'post_page_titles_typography_excerpt_mobile',
-	'label'		 => esc_attr__( 'Content', 'futurio-extra' ),
-	'section'	 => 'post_page_colors_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'post_page_titles_typography_excerpt_mobile',
+	'label'				 => esc_attr__( 'Content', 'futurio-extra' ),
+	'section'			 => 'post_page_colors_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'font-size'		 => '',
 		'line-height'	 => '',
-		'letter-spacing' => '', 
+		'letter-spacing' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '.single-entry-summary',
-      'media_query'	 => '@media (max-width: 767px)',
+			'element'		 => '.single-entry-summary',
+			'media_query'	 => '@media (max-width: 767px)',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'post_page_typography_tab',
 			'operator'	 => '==',
@@ -200,9 +200,9 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'        => 'custom',
-	'settings'    => 'post_page_typography_tab_end',
-	'label'       => '<hr/>',
-	'section'     => 'post_page_colors_section',
-	'default'     => '',  
+	'type'		 => 'custom',
+	'settings'	 => 'post_page_typography_tab_end',
+	'label'		 => '<hr/>',
+	'section'	 => 'post_page_colors_section',
+	'default'	 => '',
 ) );

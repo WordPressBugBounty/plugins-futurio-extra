@@ -21,39 +21,39 @@ Kirki::add_section( 'footer_typography_section', array(
  * Footer widget colors
  */
 Kirki::add_field( 'futurio_extra', array(
-  'type' => 'radio-buttonset',
-  'settings' => 'footer_font_color_tab',
-  'section' => 'footer_typography_section',
-  'transport' => 'postMessage',
-  'default' => 'desktop',
-  'choices' => array(
-      'desktop' => '<i class="dashicons dashicons-desktop"></i>',
-      'tablet' => '<i class="dashicons dashicons-tablet"></i>',
-      'mobile' => '<i class="dashicons dashicons-smartphone"></i>',
-  ),
-));
-Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'footer_font_color',
-	'label'		 => esc_attr__( 'Font', 'futurio-extra' ),
+	'type'		 => 'radio-buttonset',
+	'settings'	 => 'footer_font_color_tab',
 	'section'	 => 'footer_typography_section',
-  'choices' => futurio_extra_g_fonts(),
-	'transport'	 => 'auto',
-	'default'	 => array(
-		'font-family'	 => '',
-		'variant'		 => '400',
-		'letter-spacing' => '0px',
-		'font-size'		 => '15px',
-		'text-transform' => 'none',
-    futurio_extra_col()	=> '',
+	'transport'	 => 'postMessage',
+	'default'	 => 'desktop',
+	'choices'	 => array(
+		'desktop'	 => '<i class="dashicons dashicons-desktop"></i>',
+		'tablet'	 => '<i class="dashicons dashicons-tablet"></i>',
+		'mobile'	 => '<i class="dashicons dashicons-smartphone"></i>',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+) );
+Kirki::add_field( 'futurio_extra', array(
+	'type'				 => 'typography',
+	'settings'			 => 'footer_font_color',
+	'label'				 => esc_attr__( 'Font', 'futurio-extra' ),
+	'section'			 => 'footer_typography_section',
+	'choices'			 => futurio_extra_g_fonts(),
+	'transport'			 => 'auto',
+	'default'			 => array(
+		'font-family'		 => '',
+		'variant'			 => '400',
+		'letter-spacing'	 => '0px',
+		'font-size'			 => '15px',
+		'text-transform'	 => 'none',
+		futurio_extra_col()	 => '',
+	),
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
 			'element' => '#content-footer-section .widget',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'footer_font_color_tab',
 			'operator'	 => '==',
@@ -62,22 +62,22 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'footer_widget_title_color',
-	'label'		 => esc_attr__( 'Widget Titles', 'futurio-extra' ),
-	'section'	 => 'footer_typography_section',
-  'choices' => futurio_extra_g_fonts(),
-	'transport'	 => 'auto',
-	'default'	 => array(
-		'font-family'	 => '',
-		'font-size'		 => '15px',
-		'variant'		 => '400',
-		'line-height'	 => '1.6',
-		'letter-spacing' => '0px',
-    futurio_extra_col()	=> '',
+	'type'				 => 'typography',
+	'settings'			 => 'footer_widget_title_color',
+	'label'				 => esc_attr__( 'Widget Titles', 'futurio-extra' ),
+	'section'			 => 'footer_typography_section',
+	'choices'			 => futurio_extra_g_fonts(),
+	'transport'			 => 'auto',
+	'default'			 => array(
+		'font-family'		 => '',
+		'font-size'			 => '15px',
+		'variant'			 => '400',
+		'line-height'		 => '1.6',
+		'letter-spacing'	 => '0px',
+		futurio_extra_col()	 => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
 			'element' => '#content-footer-section .widget-title h3',
 		),
@@ -86,13 +86,13 @@ Kirki::add_field( 'futurio_extra', array(
 			'property'	 => 'background-color',
 			'element'	 => '#content-footer-section .widget-title:after',
 		),
-    array(
+		array(
 			'choice'	 => 'color',
 			'property'	 => 'border-color',
 			'element'	 => '#content-footer-section .widget-title h3',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'footer_font_color_tab',
 			'operator'	 => '==',
@@ -101,25 +101,25 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'footer_font_color_tablet',
-	'label'		 => esc_attr__( 'Font', 'futurio-extra' ),
-	'section'	 => 'footer_typography_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'footer_font_color_tablet',
+	'label'				 => esc_attr__( 'Font', 'futurio-extra' ),
+	'section'			 => 'footer_typography_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'variant'		 => '',
 		'letter-spacing' => '',
 		'font-size'		 => '',
 		'text-transform' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '#content-footer-section .widget',
-      'media_query'	 => '@media (max-width: 991px)',
+			'element'		 => '#content-footer-section .widget',
+			'media_query'	 => '@media (max-width: 991px)',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'footer_font_color_tab',
 			'operator'	 => '==',
@@ -128,37 +128,37 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'footer_widget_title_color_tablet',
-	'label'		 => esc_attr__( 'Widget Titles', 'futurio-extra' ),
-	'section'	 => 'footer_typography_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'footer_widget_title_color_tablet',
+	'label'				 => esc_attr__( 'Widget Titles', 'futurio-extra' ),
+	'section'			 => 'footer_typography_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'font-size'		 => '',
 		'variant'		 => '',
 		'line-height'	 => '',
 		'letter-spacing' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '#content-footer-section .widget-title h3',
-      'media_query'	 => '@media (max-width: 991px)',
+			'element'		 => '#content-footer-section .widget-title h3',
+			'media_query'	 => '@media (max-width: 991px)',
 		),
 		array(
-			'choice'	 => 'color',
-			'property'	 => 'background-color',
-			'element'	 => '#content-footer-section .widget-title:after',
-      'media_query'	 => '@media (max-width: 991px)',
+			'choice'		 => 'color',
+			'property'		 => 'background-color',
+			'element'		 => '#content-footer-section .widget-title:after',
+			'media_query'	 => '@media (max-width: 991px)',
 		),
-    array(
-			'choice'	 => 'color',
-			'property'	 => 'border-color',
-			'element'	 => '#content-footer-section .widget-title h3',
-      'media_query'	 => '@media (max-width: 991px)',
+		array(
+			'choice'		 => 'color',
+			'property'		 => 'border-color',
+			'element'		 => '#content-footer-section .widget-title h3',
+			'media_query'	 => '@media (max-width: 991px)',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'footer_font_color_tab',
 			'operator'	 => '==',
@@ -167,25 +167,25 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'footer_font_color_mobile',
-	'label'		 => esc_attr__( 'Font', 'futurio-extra' ),
-	'section'	 => 'footer_typography_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'footer_font_color_mobile',
+	'label'				 => esc_attr__( 'Font', 'futurio-extra' ),
+	'section'			 => 'footer_typography_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'variant'		 => '',
 		'letter-spacing' => '',
 		'font-size'		 => '',
 		'text-transform' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '#content-footer-section .widget',
-      'media_query'	 => '@media (max-width: 767px)',
+			'element'		 => '#content-footer-section .widget',
+			'media_query'	 => '@media (max-width: 767px)',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'footer_font_color_tab',
 			'operator'	 => '==',
@@ -194,37 +194,37 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'		 => 'typography',
-	'settings'	 => 'footer_widget_title_color_mobile',
-	'label'		 => esc_attr__( 'Widget Titles', 'futurio-extra' ),
-	'section'	 => 'footer_typography_section',
-	'transport'	 => 'auto',
-	'default'	 => array(
+	'type'				 => 'typography',
+	'settings'			 => 'footer_widget_title_color_mobile',
+	'label'				 => esc_attr__( 'Widget Titles', 'futurio-extra' ),
+	'section'			 => 'footer_typography_section',
+	'transport'			 => 'auto',
+	'default'			 => array(
 		'font-size'		 => '',
 		'variant'		 => '',
 		'line-height'	 => '',
 		'letter-spacing' => '',
 	),
-	'priority'	 => 10,
-	'output'	 => array(
+	'priority'			 => 10,
+	'output'			 => array(
 		array(
-			'element' => '#content-footer-section .widget-title h3',
-      'media_query'	 => '@media (max-width: 767px)',
+			'element'		 => '#content-footer-section .widget-title h3',
+			'media_query'	 => '@media (max-width: 767px)',
 		),
 		array(
-			'choice'	 => 'color',
-			'property'	 => 'background-color',
-			'element'	 => '#content-footer-section .widget-title:after',
-      'media_query'	 => '@media (max-width: 767px)',
+			'choice'		 => 'color',
+			'property'		 => 'background-color',
+			'element'		 => '#content-footer-section .widget-title:after',
+			'media_query'	 => '@media (max-width: 767px)',
 		),
-    array(
-			'choice'	 => 'color',
-			'property'	 => 'border-color',
-			'element'	 => '#content-footer-section .widget-title h3',
-      'media_query'	 => '@media (max-width: 767px)',
+		array(
+			'choice'		 => 'color',
+			'property'		 => 'border-color',
+			'element'		 => '#content-footer-section .widget-title h3',
+			'media_query'	 => '@media (max-width: 767px)',
 		),
 	),
-  'active_callback'	 => array(
+	'active_callback'	 => array(
 		array(
 			'setting'	 => 'footer_font_color_tab',
 			'operator'	 => '==',
@@ -233,9 +233,9 @@ Kirki::add_field( 'futurio_extra', array(
 	),
 ) );
 Kirki::add_field( 'futurio_extra', array(
-	'type'        => 'custom',
-	'settings'    => 'footer_typography_section_end',
-	'label'       => '<hr/>',
-	'section'     => 'footer_typography_section',
-	'default'     => '',  
+	'type'		 => 'custom',
+	'settings'	 => 'footer_typography_section_end',
+	'label'		 => '<hr/>',
+	'section'	 => 'footer_typography_section',
+	'default'	 => '',
 ) );

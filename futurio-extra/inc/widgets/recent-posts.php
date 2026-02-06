@@ -123,4 +123,6 @@ if ( !class_exists( 'Futurio_Extra_Extended_Recent_Posts' ) ) :
 
 	
 
+	
+
 endif;
