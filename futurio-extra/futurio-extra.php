@@ -3,7 +3,7 @@
  * Plugin Name: Futurio Extra
  * Plugin URI: https://futuriowp.com/
  * Description: Extra addon for Futurio Theme
- * Version: 2.0.21
+ * Version: 2.0.22
  * Author: FuturioWP
  * Author URI: https://futuriowp.com/
  * License: GPL-2.0+
@@ -194,62 +194,61 @@ Kirki::add_config('futurio_extra', array(
 add_filter('kirki_futurio_extra_webfonts_skip_hidden', '__return_false', 99);
 add_filter('kirki_futurio_extra_css_skip_hidden', '__return_false', 99);
 
-add_action('plugins_loaded', 'futurio_extra_check_for_woocommerce');
-
-require_once( plugin_dir_path(__FILE__) . 'inc/options/extra.php' );
-
-
+if(!function_exists('wp_get_current_user')) { include(ABSPATH . "wp-includes/pluggable.php"); }
 require_once( plugin_dir_path(__FILE__) . 'inc/options/pre-defined.php' );
-if (futurio_extra_theme('futurio-storefront') ) {
-    require_once( plugin_dir_path(__FILE__) . 'inc/options/storefront.php' );
-}
 
 function futurio_extra_check_for_woocommerce() {
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/extra.php' );
+
+	if (futurio_extra_theme('futurio-storefront') ) {
+		require_once( plugin_dir_path(__FILE__) . 'inc/options/storefront.php' );
+	}
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-archive.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-posts-pages.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-presets.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-top-bar.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-header-title.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-main-menu.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-widget.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-footer-widget.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-footer-credits.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/header.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/global.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/top-bar.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/menu-icons.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/posts-pages.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/sidebar.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/footer-credits.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/custom-codes.php' );
+
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/demo-import.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/documentation.php' );
+	require_once( plugin_dir_path(__FILE__) . 'inc/options/footer-credits.php' );
+	
+	if (!class_exists('DilazMetabox') && current_user_can( 'edit_pages' )) {
+    require_once( plugin_dir_path(__FILE__) . 'inc/metabox/dilaz-metabox.php' );
+	}
+	if (class_exists('DilazMetabox') && current_user_can( 'edit_pages' ) ) {
+		require_once( plugin_dir_path(__FILE__) . 'inc/metabox/metabox-config.php' );
+	}
+	
+	include_once( plugin_dir_path(__FILE__) . 'inc/admin/dashboard.php' );
+	
     if (!defined('WC_VERSION')) {
         // no woocommerce :(
     } else {
         require_once( plugin_dir_path(__FILE__) . 'inc/options/woocommerce.php' );
     }
 }
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-archive.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-posts-pages.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-presets.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-top-bar.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-header-title.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-main-menu.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-widget.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-footer-widget.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/colors-typography-footer-credits.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/header.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/global.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/top-bar.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/menu-icons.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/posts-pages.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/sidebar.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/footer-credits.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/custom-codes.php' );
+add_action( 'after_setup_theme', 'futurio_extra_check_for_woocommerce' );
 
-require_once( plugin_dir_path(__FILE__) . 'inc/options/demo-import.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/documentation.php' );
-require_once( plugin_dir_path(__FILE__) . 'inc/options/footer-credits.php' );
-
-
-if(!function_exists('wp_get_current_user')) { include(ABSPATH . "wp-includes/pluggable.php"); }
-
-if (!class_exists('DilazMetabox') && current_user_can( 'edit_pages' )) {
-    require_once( plugin_dir_path(__FILE__) . 'inc/metabox/dilaz-metabox.php' );
-}
-if (class_exists('DilazMetabox') && current_user_can( 'edit_pages' ) ) {
-    require_once( plugin_dir_path(__FILE__) . 'inc/metabox/metabox-config.php' );
-}
 
 require_once( plugin_dir_path(__FILE__) . 'inc/shortcodes/shortcodes.php' );
 
 include_once( plugin_dir_path(__FILE__) . 'inc/widgets.php' );
 
 include_once( plugin_dir_path(__FILE__) . 'inc/demo/futurio-demos.php' );
-include_once( plugin_dir_path(__FILE__) . 'inc/admin/dashboard.php' );
 include_once( plugin_dir_path(__FILE__) . 'inc/admin/redirect.php' );
 
 add_action('customize_register', 'futurio_extra_theme_customize_register', 99);

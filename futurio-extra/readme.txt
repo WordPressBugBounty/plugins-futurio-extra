@@ -4,7 +4,7 @@ Author URI: https://futuriowp.com/about/
 Plugin URL: https://futuriowp.com/
 Requires at Least: 4.4
 Tested Up To: 6.9
-Stable tag: 2.0.21
+Stable tag: 2.0.22
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: elementor, shortcodes, demo, page builder, woocommerce, widgets, templates
@@ -58,6 +58,9 @@ Extend the WooCommerce with new options and features. Import full WooCommerce de
 This plugin will only work with the [Futurio](https://futuriowp.com/) or [Futurio Storefront](https://wordpress.org/themes/futurio-storefront/) theme.
 
 == Changelog ==
+
+= 2.0.22 =
+* Fixed deprecated code issue
 
 = 2.0.21 =
 * Fixed notification notice
