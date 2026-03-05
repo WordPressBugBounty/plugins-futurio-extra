@@ -162,7 +162,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         add_action( 'futurio_storefront_account', 'futurio_extra_account_text' );
         add_action( 'futurio_storefront_cart', 'futurio_extra_cart_text' );
     }
-	add_action( 'after_setup_theme', 'futurio_extra_header_icons', 0 );
+	add_action( 'after_setup_theme', 'futurio_extra_header_icons', 20 );
 
 }
 
