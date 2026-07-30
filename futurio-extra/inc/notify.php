@@ -201,7 +201,7 @@ function futurio_pro_notice_message() {
 		</div>
 		<div class="futurio-review-text">
 			<h3><?php esc_html_e( 'Extra Sale!', 'futurio-extra' ) ?></h3>
-			<p><?php _e( 'Get the  <a href="https://futuriowp.com/futurio-pro/" target="_blank">Pro version</a> for more stunning elements, demos and customization options. Now with 20% discount on all plans. Use coupon code: <red><b>SALE2026</b></red>', 'futurio-extra' ) ?></p>
+			<p><?php _e( 'Get the  <a href="https://futuriowp.com/futurio-pro/" target="_blank">Pro version</a> for more stunning elements, demos and customization options.', 'futurio-extra' ) ?></p>
 			<ul class="futurio-review-ul">
 				<li class="show-mor-message">
 					<a href="https://futuriowp.com/futurio-pro/" target="_blank">
